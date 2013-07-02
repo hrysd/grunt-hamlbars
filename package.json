@@ -25,10 +25,8 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "start": "./bin/hamlbars",
     "test": "grunt test"
   },
-  "bin": "./bin/hamlbars",
   "dependencies": {
     "execSync": "0.0.4"
   },
