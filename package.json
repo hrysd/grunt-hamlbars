@@ -1,0 +1,48 @@
+{
+  "name": "grunt-hamlbars",
+  "description": "Compile hamlbars to handlebars.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/hrysd/grunt-hamlbars",
+  "author": {
+    "name": "Hiroshi Yoshida",
+    "email": "hrysd22@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hrysd/grunt-hamlbars.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hrysd/grunt-hamlbars/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/hrysd/grunt-hamlbars/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "tasks/hamlbars.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "start": "./bin/hamlbars",
+    "test": "grunt test"
+  },
+  "bin": "./bin/hamlbars",
+  "dependencies": {
+    "execSync": "0.0.4"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin",
+    "hamlbars"
+  ]
+}
