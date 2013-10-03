@@ -29,11 +29,15 @@ module.exports = function(grunt) {
     });
   });
 
+  var wrapPath = function(path) {
+    return '"' + path + '"';
+  }
+
   var hamlbarize = function(filename) {
     var execSync = require('execSync');
     var target   = path.resolve(filename);
     var bin      = path.join(path.dirname(__dirname), 'bin', 'hamlbars');
-    var result   = execSync.exec(bin + ' ' + target);
+    var result   = execSync.exec(wrapPath(bin) + ' ' + wrapPath(target));
 
     if (result.code !== 0) {
       grunt.fail.warn(
