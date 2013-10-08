@@ -1,6 +1,6 @@
 # grunt-hamlbars
 
-> Compile hamlbars to handlebars.
+> Compile [hamlbars](https://github.com/jamesotron/hamlbars) to handlebars.
 
 ## Requirements
 
