@@ -34,10 +34,10 @@ module.exports = function(grunt) {
   }
 
   var hamlbarize = function(filename) {
-    var execSync = require('execSync');
-    var target   = path.resolve(filename);
-    var bin      = path.join(path.dirname(__dirname), 'bin', 'hamlbars');
-    var result   = execSync.exec(wrapPath(bin) + ' ' + wrapPath(target));
+    var execSync = require('execSync'),
+        target   = path.resolve(filename),
+        bin      = path.join(path.dirname(__dirname), 'bin', 'hamlbars'),
+        result   = execSync.exec('bundle exec ' + wrapPath(bin) + ' ' + wrapPath(target));
 
     if (result.code !== 0) {
       grunt.fail.warn(
