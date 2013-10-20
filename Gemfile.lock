@@ -1,0 +1,26 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    execjs (2.0.2)
+    haml (4.0.3)
+      tilt
+    hamlbars (2.0.1)
+      execjs (>= 1.2)
+      haml
+      sprockets
+      tilt
+    hike (1.2.3)
+    multi_json (1.8.2)
+    rack (1.5.2)
+    sprockets (2.10.0)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    tilt (1.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hamlbars

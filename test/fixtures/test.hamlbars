@@ -1,1 +1,7 @@
-= hb 'test'
+%ul
+  = hb 'each repositories' do
+    #{hb 'name'} is awesome!
+
+%button{_action: 'refresh'}Refresh
+
+= hb 'link-to "authors"'

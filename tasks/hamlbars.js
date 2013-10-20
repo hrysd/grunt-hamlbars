@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
   var wrapPath = function(path) {
     return '"' + path + '"';
-  }
+  };
 
   var hamlbarize = function(filename) {
     var execSync = require('execSync'),
@@ -47,5 +47,5 @@ module.exports = function(grunt) {
       );
     }
     return result.stdout;
-  }
-}
+  };
+};
