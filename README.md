@@ -1,4 +1,4 @@
-# grunt-hamlbars
+# grunt-hamlbars [![Build Status](https://travis-ci.org/hrysd/grunt-hamlbars.png?branch=master)](https://travis-ci.org/hrysd/grunt-hamlbars)
 
 > Compile [hamlbars](https://github.com/jamesotron/hamlbars) to handlebars.
 
