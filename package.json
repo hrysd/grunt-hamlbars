@@ -37,7 +37,7 @@
     "grunt": "~0.4.1"
   },
   "engines": {
-    "node": ">= 0.11."
+    "node": ">= 0.11"
   },
   "keywords": [
     "gruntplugin",
