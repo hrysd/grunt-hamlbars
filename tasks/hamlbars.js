@@ -34,18 +34,11 @@ module.exports = function(grunt) {
   };
 
   var hamlbarize = function(filename) {
-    var execSync = require('execSync'),
+    var execSync = require('child_process').execSync,
         target   = path.resolve(filename),
         bin      = path.join(path.dirname(__dirname), 'bin', 'hamlbars'),
-        result   = execSync.exec('bundle exec ' + wrapPath(bin) + ' ' + wrapPath(target));
+        result   = execSync('bundle exec ' + wrapPath(bin) + ' ' + wrapPath(target));
 
-    if (result.code !== 0) {
-      grunt.fail.warn(
-        'Error executing hamlbars on ' + target + ': \n' +
-        result.stderr + '\n' +
-        result.stdout
-      );
-    }
-    return result.stdout;
+    return result;
   };
 };
