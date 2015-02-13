@@ -1,7 +1,7 @@
 {
   "name": "grunt-hamlbars",
   "description": "Compile hamlbars to handlebars.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "homepage": "https://github.com/hrysd/grunt-hamlbars",
   "author": {
     "name": "Hiroshi Yoshida",
