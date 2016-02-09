@@ -56,27 +56,24 @@ module.exports = function(grunt) {
       socket.setEncoding("utf8")
 
       socket.on('connection', () => {
+        grunt.log.writeln("connected")
         filePath = path.resolve(filename)
         socket.write(filePath)
       })
 
       socket.on('data', (data) => {
+        grunt.log.writeln("data received")
+        grunt.log.writeln(data)
         outputFile = data
       })
 
       socket.on("close", () => {
+        grunt.log.writeln("socket closed")
         resolve(outputFile)
       })
 
-      grunt.log.writeln("trying to connect from node")
-      while( !socket.readable ){
-        try{
-          socket.connect(4568)
-        } catch(e) {
+      setTimeout( () => {socket.connect(4568)} , 2000)
 
-        }
-
-      }
     })
 
     return promise
