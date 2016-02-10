@@ -94,9 +94,7 @@ module.exports = function(grunt) {
         spawnSync = require('child_process').spawnSync,
         spawn = require('child_process').spawn;
 
-    let child = spawn('bundle' , ['exec', bin], {stdio: 'inherit', detached: true});
-
-    child.unref()
+    let child = spawn('bundle' , ['exec', bin], {stdio: 'inherit'});
 
     return child
   }
