@@ -17,50 +17,29 @@ class Renderer
     }
 
     output = template.render(self)
-    # puts output
     return output
   end
 
 end
 
-# puts "**" * 100
-# puts "started hamlbars server"
-# puts "**" * 100
-
 Socket.tcp_server_loop(4568) {|sock, client_addrinfo|
   Thread.new {
     begin
 
-      sock.puts "hola"
-      sock.write "hola"
+      sep = '$hamlbarsfileend$'
+      line = ""
 
-      lines = []
-      while lines.length == 0 do
-        # puts "reading lines"
-        lines += sock.readlines('/hamlbarsfileend/')
+      while line.length == 0 do
+        sock.flush
+        line = sock.readline(sep).gsub(sep, "")
       end
 
-      # puts lines.length
-      # puts lines[0]
-      # IO.foreach(sock) {|x| print "GOT ", x }
-      # IO.copy_stream(sock, sock)
-    # ensure
-      sock.puts("closing socket server side")
+      handlebarsOutput = Renderer.new(line).render
+      sock.sync = true
+      sock.write handlebarsOutput
+
+    ensure
       sock.close
     end
   }
 }
-
-# loop {
-#   Thread.start(server.accept) do |client|
-#     client.read do |data|
-#       puts data
-#     end
-#     while line = client.gets
-#       puts line
-#     end
-#     # puts "Received something"
-#     # renderer = Renderer.new
-#     # client.puts renderer.render
-#   end
-# }
