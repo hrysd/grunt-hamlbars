@@ -13,7 +13,7 @@ class Renderer
 
   def render
     template = Tilt['hamlbars'].new(@input) {
-      File.read(@input)
+      @input
     }
 
     output = template.render(self)

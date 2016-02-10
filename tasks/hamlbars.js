@@ -28,8 +28,11 @@ module.exports = function(grunt) {
         } else {
           return true;
         }
-      }).map( (filename) => {
-        let promise = hamlbarize(filename)
+      }).map( (fileName) => {
+
+        let fileContent = grunt.file.read( path.resolve(fileName) )
+
+        let promise = hamlbarize(fileContent)
 
         promise.then( (handlebarOutput) => {
           grunt.file.write(f.dest, handlebarOutput);
@@ -49,7 +52,7 @@ module.exports = function(grunt) {
   });
 
 
-  let hamlbarize = (filename) => {
+  let hamlbarize = (fileContent) => {
 
     let promise = new Promise( (resolve, reject) => {
 
@@ -64,8 +67,7 @@ module.exports = function(grunt) {
       })
 
       socket.on('connect', () => {
-        let filePath = path.resolve(filename) + sep
-        socket.write(filePath)
+        socket.write(fileContent + sep)
       })
 
       socket.on('data', (data) => {
