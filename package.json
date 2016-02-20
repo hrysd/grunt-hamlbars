@@ -22,7 +22,7 @@
   ],
   "main": "tasks/hamlbars.js",
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.11"
   },
   "scripts": {
     "test": "grunt test"
@@ -34,10 +34,7 @@
     "grunt": "~0.4.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
-  },
-  "engines": {
-    "node": ">= 0.11"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin",
